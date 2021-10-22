@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>돔(DOM)조작하기(HTML과 JAVASCRIPT 연결</title>
+    <script>
+        function aaa(){
+            // alert("안녕하세요~~~~~~~")
+            
+            document.getElementById("qqq").innerText = "반갑습니다." //==<div id = "qqq">안녕하세요</div>
+        }
+        
+        function counter(){
+            const temp = Number(document.getElementById('count').innerText)+ 1
+            document.getElementById('count').innerText = temp
+        }
+        function changeColor(){
+            document.getElementById("ccc").setAttribute("style","background-color : yellow")
+
+            document.getElementById("qqq").setAttribute("style","color : blue")
+                
+        }
+        function setDisalbed(){
+            document.getElementById("ddd").setAttribute("disabled","true")
+        }
+    </script>
+</head>
+<body>
+    <div id = "qqq">안녕하세요</div>
+    <button onclick="aaa()">클릭하기</button>
+    <div id = "count"></div>
+    <button onclick="counter()">숫자올리기</button>
+
+    <button id = "ccc" onclick="changeColor()">색깔바꾸기</button>
+    <button id = "ddd" onclick="setDisalbed()">비활성화시키기</button>
+</body>
+</html>

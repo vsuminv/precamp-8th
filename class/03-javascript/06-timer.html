@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang=ko">
+<head>
+    <title>타이머 만들기</title>
+    <script src = "06-timer.js">
+
+            let isStarted = false
+            const aaa=()=>{
+                    if(isStarted === false){
+                        isStarted = true
+                        const token = String(Math.floor(Math.random() * 1000000)).padStart(6,"0")
+                        document.getElementById("qqq").innerText= token
+
+                        let time = 180
+                        setInterval(function(){
+                            if(time>=0){
+                                const minutes = String(Math.floor(time/60)).padStart(2,"0")
+                                const seconds = String(time % 60).padStart(2,"0")
+                                document.getElementById("bbb").innerText = minutes + ":"+seconds
+                                time = time - 1
+                            }
+                        },1000)
+                    } else{
+                        alert('이미 실행되었습니다.')
+                    }
+                        // setInterval(function(){
+                        //     const num = Number(document.getElementById("bbb").innerText) -1
+                        //     if(num >=0){
+                        //         document.getElementById("bbb").innerText = num
+                        //     }     
+                        // },1000)
+            }
+      
+    </script>
+</head>
+<body>
+    <span id = "qqq"  style="display:inline-block">000000</span>
+    <button onclick="aaa()">인증번호 전송</button><div></div>
+    <span id = "bbb">3:00</span>
+    <button disabled>인증완료</button>
+</body>
+</html>
